@@ -1,0 +1,190 @@
+// AgentPanelOcx.odl : type library source for ActiveX Control project.
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (AgentPanelOcx.tlb) that will become a resource in
+// AgentPanelOcx.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(2B831CEB-D284-4587-87DC-0C7F1B3C09FE), version(1.0),
+  helpfile("AgentPanelOcx.hlp"),
+  helpstring("AgentPanelOcx ActiveX Control module"),
+  control ]
+library AGENTPANELOCXLib
+{
+	importlib(STDOLE_TLB);
+	importlib(STDTYPE_TLB);
+
+	//  Primary dispatch interface for CAgentPanelOcxCtrl
+
+	[ uuid(5D1C8F4D-6440-4496-BEFB-A7B8AE550444),
+	  helpstring("Dispatch interface for AgentPanelOcx Control"), hidden ]
+	dispinterface _DAgentPanelOcx
+	{
+		properties:
+			// NOTE - ClassWizard will maintain property information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_PROP(CAgentPanelOcxCtrl)
+			//}}AFX_ODL_PROP
+
+		methods:
+			// NOTE - ClassWizard will maintain method information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_METHOD(CAgentPanelOcxCtrl)
+			[id(1)] void ActionLogon(BSTR sAccount, BSTR sPassword, short iLoginServerOpt, BSTR sLoginServerHost);
+			[id(2)] void ActionLogon2(BSTR sCorp, BSTR sAccount, BSTR sPassword, short iLoginServerOpt, BSTR sLoginServerHost);
+			[id(3)] void ActionReset();
+			[id(4)] void ActionLogout();
+			[id(5)] void ActionLogonAgain();
+			[id(6)] void ActionCallDepartment(BSTR sCallTarget);
+			[id(7)] void ActionCallAgent(BSTR sCallTarget);
+			[id(8)] void ActionCallOtherAgent(BSTR sCallTarget);
+			[id(9)] void ActionCallPstn(BSTR sCallTarget);
+			[id(10)] void ActionCallExtNum(BSTR sCallTarget);
+			[id(11)] void ActionCallOtherDepartment(BSTR sCallTarget);
+			[id(12)] void ActionOnHook();
+			[id(13)] void ActionOffHook();
+			[id(14)] void ActionPark();
+			[id(15)] void ActionUnPark();
+			[id(16)] void ActionProcess();
+			[id(17)] void ActionUnProcess();
+			[id(18)] void ActionHold();
+			[id(19)] void ActionUnHold();
+			[id(20)] void ActionTransfer();
+			[id(21)] void ActionAutoTransfer();
+			[id(22)] void ActionStartMonit(BSTR sAgentID, BSTR sIP, BSTR sPort);
+			[id(23)] void ActionStopMonit();
+			[id(24)] void ActionForceDisconnect(BSTR sAgentID);
+			[id(25)] void ActionGetFullFreeAgentInfo();
+			[id(26)] void ActionGetGroupInfo();
+			[id(27)] void ActionGetOneGroupFreeAgentInfo(BSTR sGroupName);
+			[id(28)] void ActionGetTalkingAgent();
+			[id(29)] void ActionSendDTMF(short iDTMFCode);
+			[id(30)] void ActionChangePassword(BSTR sAccount, BSTR sOldPassword, BSTR sNewPassword);
+			[id(31)] void ActionChangeEarphoneVolume(short iNewVolume);
+			[id(32)] void ActionChangeMicVolume(short iNewVolume);
+			[id(33)] void ActionSendSMS(BSTR sTargetNum, BSTR sSMSContent);
+			[id(34)] void ActionSendChat(BSTR sChatContent);
+			[id(35)] void ConfigPortSettings(boolean bCustomizePort, long lAgentPort, long lAudioPort1, long lAudioPort2, boolean bRequireTCPTransfer, boolean bIsLanUser);
+			[id(36)] void ConfigRecSettings(boolean bLocalRecord);
+			[id(37)] void ConfigOutDialSettings(boolean bAutoOffhook, boolean bOutDialMobileAddZero, BSTR sAreaNum, BSTR sOneKeyNum);
+			[id(38)] void ConfigSoundSettings(boolean bMicAutoCtrl, boolean bEchoRemove, boolean bMicBostUp, boolean bUsePCSpeaker);
+			[id(39)] short GetLoginManner();
+			[id(40)] BSTR GetDeptment();
+			[id(41)] BSTR GetCorp();
+			[id(42)] short GetCallType();
+			[id(43)] BSTR GetCallFrom();
+			[id(44)] BSTR GetPrivateData();
+			[id(45)] BSTR GetRecInvokeID();
+			[id(46)] short GetClientState();
+			[id(47)] short GetLogonType();
+			[id(48)] short GetCallPartyType();
+			[id(49)] boolean GetAgentHasLogon();
+			[id(50)] boolean Initialize(short iVersionType, BSTR sVersionNum);
+			[id(51)] void Exit();
+			[id(52)] short GetRoleInCompany();
+			[id(53)] BSTR GetAgentAccount();
+			[id(54)] boolean GetIsCCNUser();
+			[id(55)] short GetAgentType();
+			[id(56)] boolean GetIsSMSEnabled();
+			[id(57)] BSTR GetAgentExtNum();
+			[id(58)] BSTR GetAgentPhoneNo();
+			[id(59)] BSTR GetManagerID();
+			[id(60)] boolean GetIsSuperAgent();
+			[id(61)] boolean GetIsMasterSuperAgent();
+			[id(62)] void ActionSendStrMsg(BSTR cTargets, BSTR cContent);
+			[id(63)] BSTR GetRemindTime();
+			[id(64)] void ActionSettings();
+			[id(65)] void ActionMonit();
+			[id(66)] void ActionAgentOutDial(BSTR sCallTarget, short iCallType);
+			[id(67)] boolean GetIsMonit();
+			[id(68)] BSTR GetSMSParamsInfo();
+			[id(69)] BSTR GetAllSettings();
+			[id(70)] BSTR GetBriefStatisticInfo(BSTR sDayTime);
+			[id(71)] void ActionSaveBriefStatisticInfo();
+			[id(72)] void ActionSetMuteMode(boolean bSetMute);
+			[id(73)] void ActionTransferToIVR(BSTR sPrivateData, boolean bUseDefaultTypes, BSTR sLanguageType, BSTR sOperationType, short iWorkingMode);
+			[id(74)] BSTR GetTransferToIVRParamsInfo();
+			[id(75)] boolean GetIsCallFromACD();
+			[id(76)] void ActionUpdateSettings();
+			[id(77)] boolean GetIsOutDialOpenURL();
+			[id(78)] short GetIVRReturn();
+			[id(79)] void SetProductVersion(short iVersionType, BSTR sVersionNum);
+			[id(80)] BSTR GetRecInvokePath();
+			[id(81)] BSTR GetAgentID();
+			[id(82)] void SetOriginalData(BSTR sOriginalData);
+			[id(83)] void ActionOutDial(BSTR sCallTarget);
+			[id(84)] void SetSelectGroup(BSTR sGroup);
+			[id(85)] void ActionAutoTransferEx(BSTR sCallTarget);
+			[id(86)] void ActionOutDialWithRecSetting(BSTR strTarget, BSTR strRecPath);
+			[id(87)] void ActionOffHookWithRecSetting(BSTR sRecPath);
+			[id(88)] boolean GetIsCallInOpenURL();
+			[id(89)] BSTR GetParkReasons();
+			[id(90)] void SetParkReason(short iParkReasonID);
+			[id(91)] void SetCallerSendingInDialing(BSTR sCaller);
+			[id(92)] void ActionJoinOutDialMode(boolean bJoinOutDialMode);
+			[id(93)] boolean GetIsOutDialMode();
+			[id(94)] BSTR GetMoudleFilePath();
+			[id(95)] void ActionSetMuteModeEx(long nDev, long nVolume, boolean bSet);
+			[id(96)] void ActionStartConference();
+			[id(97)] void ActionEndConference();
+			[id(98)] boolean GetCanConference();
+			[id(99)] void StopPlayAgentID();
+			[id(100)] void ActionACDAutoLogin();
+			[id(101)] void SetLogonMode(short nLoginMode);
+			//}}AFX_ODL_METHOD
+	};
+
+	//  Event dispatch interface for CAgentPanelOcxCtrl
+
+	[ uuid(A3378169-B79C-41EE-BC73-DA3A5D88ADDF),
+	  helpstring("Event interface for AgentPanelOcx Control") ]
+	dispinterface _DAgentPanelOcxEvents
+	{
+		properties:
+			//  Event interface has no properties
+ 
+		methods:
+			// NOTE - ClassWizard will maintain event information here.
+			//    Use extreme caution when editing this section.
+			//{{AFX_ODL_EVENT(CAgentPanelOcxCtrl)
+			[id(1)] void OnLogin(boolean bSucc, short iState);
+			[id(2)] void OnAgentLoginSucc(boolean bAgentExist, BSTR sAgentId, short iClientState);
+			[id(3)] void OnAgentLogoutConf(short iClientState);
+			[id(4)] void OnAgentMakeCallConf(short iCallingState);
+			[id(5)] void OnClientStateChange(short iClientState);
+			[id(6)] void OnCallDelivered(BSTR sCallID, BSTR sCaller, BSTR sCallee, BSTR sOriginalData);
+			[id(7)] void OnSystemStatusInfo(BSTR sWords);
+			[id(8)] void OnChatMsgDelivered(BSTR sTalker, BSTR sChatContent, boolean bIsCallInfo);
+			[id(9)] void OnQueueSize(long lQueueSize);
+			[id(10)] void OnGetGroupInfo(BSTR sGroupList);
+			[id(11)] void OnGetOneGroupFreeAgentInfo(BSTR sAgentList);
+			[id(12)] void OnGetFullFreeAgentInfo(BSTR sAgentList);
+			[id(13)] void OnGetFullTalkingAgentInfo(BSTR sAgentList);
+			[id(14)] void OnAudioLostRate(BSTR sRate);
+			[id(15)] void OnAgentLoginFailed(BSTR sFailingInfo);
+			[id(16)] void OnServiceStateChange(short iServiceChange);
+			[id(17)] void OnPreOutDialEnd(BSTR sInfo);
+			[id(18)] void OnUserLoginInfo(short iType, BSTR sInfo);
+			[id(19)] void OnAgentOutdialConf(BSTR sCallID);
+			[id(20)] void OnACDSendStrMsg(BSTR stheSender, BSTR smsgContent);
+			[id(21)] void OnLoginSendStrMsg(long nStrMsgId, BSTR stheSender, BSTR smsgContent);
+			[id(22)] void OnIVRReturnToAgentConf(BSTR sIVRPrivateData);
+			[id(23)] void OnNotifyAgentLoginConf(BSTR sAgentLoginInfo);
+			[id(24)] void OnAddTalkToWebChat(BSTR sCallType, BSTR sCaller, BSTR sCallee, BSTR sCallid, BSTR sOrginalData, BSTR sCallerType, BSTR sKeyword);
+			//}}AFX_ODL_EVENT
+	};
+
+	//  Class information for CAgentPanelOcxCtrl
+	[ uuid(00EA5BBE-D690-489F-98C5-CFEECE85D930),
+	  helpstring("AgentPanelOcx Control"), control ]
+	coclass AgentPanelOcx
+	{
+		[default] dispinterface _DAgentPanelOcx;
+		[default, source] dispinterface _DAgentPanelOcxEvents;
+	};
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};
