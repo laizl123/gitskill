@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C51AB450-C2E4-49DF-B71A-DC673814EA54}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>chatDlg</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>IMlibs\includes;$(IncludePath)</IncludePath>
+    <LibraryPath>IMlibs\libs\debug;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>IMlibs\includes;$(IncludePath)</IncludePath>
+    <LibraryPath>IMlibs\libs\release;$(IncludePath);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;CHATDLG_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CallingConvention>Cdecl</CallingConvention>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libtim.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;CHATDLG_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>libtim.lib;wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="ui\Face.zip" />
+    <None Include="ui\RichEditDemoRes.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ChatCBImpl.h" />
+    <ClInclude Include="ChatdlgAPI.h" />
+    <ClInclude Include="ChatThread.h" />
+    <ClInclude Include="ChatWindowMsgHandle.h" />
+    <ClInclude Include="ImChat.h" />
+    <ClInclude Include="IMlibs\c_includes\tim_c.h" />
+    <ClInclude Include="IMlibs\c_includes\tim_comm_c.h" />
+    <ClInclude Include="IMlibs\c_includes\tim_conv_c.h" />
+    <ClInclude Include="IMlibs\c_includes\tim_friend_c.h" />
+    <ClInclude Include="IMlibs\c_includes\tim_group_c.h" />
+    <ClInclude Include="IMlibs\c_includes\tim_int_c.h" />
+    <ClInclude Include="IMlibs\c_includes\tim_msg_c.h" />
+    <ClInclude Include="IMlibs\c_includes\tim_relay_c.h" />
+    <ClInclude Include="IMlibs\c_includes\tim_status_c.h" />
+    <ClInclude Include="IMlibs\c_includes\tim_wrapper.h" />
+    <ClInclude Include="json\autolink.h" />
+    <ClInclude Include="json\config.h" />
+    <ClInclude Include="json\features.h" />
+    <ClInclude Include="json\forwards.h" />
+    <ClInclude Include="json\json.h" />
+    <ClInclude Include="json\json_batchallocator.h" />
+    <ClInclude Include="json\reader.h" />
+    <ClInclude Include="json\value.h" />
+    <ClInclude Include="json\writer.h" />
+    <ClInclude Include="message\Dispatcher.h" />
+    <ClInclude Include="message\MessageQueue.h" />
+    <ClInclude Include="message\Receiver.h" />
+    <ClInclude Include="message\Sender.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="ui\BaseWindow.h" />
+    <ClInclude Include="ui\ButtonExUI.h" />
+    <ClInclude Include="ui\FaceCtrl.h" />
+    <ClInclude Include="ui\FaceList.h" />
+    <ClInclude Include="ui\FaceSelDlg.h" />
+    <ClInclude Include="ui\FileDialogEx.h" />
+    <ClInclude Include="ui\FontInfo.h" />
+    <ClInclude Include="ui\GifImage.h" />
+    <ClInclude Include="ui\IImageOle.h" />
+    <ClInclude Include="ui\ManageChatWindow.h" />
+    <ClInclude Include="ui\MessageNotifyWindow.h" />
+    <ClInclude Include="ui\observer_impl_base.hpp" />
+    <ClInclude Include="ui\PicBarDlg.h" />
+    <ClInclude Include="ui\RichEditUtil.h" />
+    <ClInclude Include="ui\UICrack.h" />
+    <ClInclude Include="ui\UIMenu.h" />
+    <ClInclude Include="ui\win_impl_base.h" />
+    <ClInclude Include="unity\CommonDef.h" />
+    <ClInclude Include="unity\inttype.h" />
+    <ClInclude Include="unity\kpacket.h" />
+    <ClInclude Include="unity\Path.h" />
+    <ClInclude Include="unity\unzip.h" />
+    <ClInclude Include="unity\Utils.h" />
+    <ClInclude Include="unity\XmlDocument.h" />
+    <ClInclude Include="UserChatWindow.h" />
+    <ClInclude Include="WorkMateWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ChatCBImpl.cpp" />
+    <ClCompile Include="chatDlg.cpp" />
+    <ClCompile Include="ChatdlgAPI.cpp" />
+    <ClCompile Include="ChatThread.cpp" />
+    <ClCompile Include="ChatWindowMsgHandle.cpp" />
+    <ClCompile Include="dllmain.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ImChat.cpp" />
+    <ClCompile Include="json\json_reader.cpp" />
+    <ClCompile Include="json\json_value.cpp" />
+    <ClCompile Include="json\json_writer.cpp" />
+    <ClCompile Include="message\Dispatcher.cpp" />
+    <ClCompile Include="message\MessageQueue.cpp" />
+    <ClCompile Include="message\Receiver.cpp" />
+    <ClCompile Include="message\Sender.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ui\BaseWindow.cpp" />
+    <ClCompile Include="ui\ButtonExUI.cpp" />
+    <ClCompile Include="ui\FaceCtrl.cpp" />
+    <ClCompile Include="ui\FaceList.cpp" />
+    <ClCompile Include="ui\FaceSelDlg.cpp" />
+    <ClCompile Include="ui\FileDialogEx.cpp" />
+    <ClCompile Include="ui\FontInfo.cpp" />
+    <ClCompile Include="ui\GifImage.cpp" />
+    <ClCompile Include="ui\ManageChatWindow.cpp" />
+    <ClCompile Include="ui\MessageNotifyWindow.cpp" />
+    <ClCompile Include="ui\PicBarDlg.cpp" />
+    <ClCompile Include="ui\RichEditUtil.cpp" />
+    <ClCompile Include="ui\UICrack.cpp" />
+    <ClCompile Include="ui\UIMenu.cpp" />
+    <ClCompile Include="ui\win_impl_base.cpp" />
+    <ClCompile Include="unity\Path.cpp" />
+    <ClCompile Include="unity\unzip.cpp" />
+    <ClCompile Include="unity\Utils.cpp" />
+    <ClCompile Include="unity\XmlDocument.cpp" />
+    <ClCompile Include="UserChatWindow.cpp" />
+    <ClCompile Include="WorkMateWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="chatDlg.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\MainLogo.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
