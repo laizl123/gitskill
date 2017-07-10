@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="GBK" ?> 
+<Resource>
+
+<TextResource>
+<text id="0" name="MonitorTip">启通宝安装</text>
+<text id="1" name="ContactUs_Tip">联系讯鸟</text>
+<text id="2" name="ContactUs_1">北京讯鸟软件有限公司</text>
+<text id="3" name="ContactUs_2">北京讯鸟软件有限公司是一家领先的呼叫中心系统的提供商和运营商。</text>
+<text id="4" name="ContactUs_3">电话:400-707-2008\n传真:010-62529647\n网址:http://saas.infobird.com</text>
+<text id="5" name="ContactUs_4">呼叫讯鸟</text>
+<text id="6" name="MainTitle">讯鸟Internet呼叫中心座席端  － Ver</text>
+<text id="7" name="ErrorTitle">错误--讯鸟座席端</text>
+<text id="8" name="TipTitle">提示--讯鸟座席端</text>
+<text id="9" name="CloseTitle">关闭--讯鸟座席端</text>
+<text id="10" name="CloseTip">您确认要关闭启通宝吗?</text>
+<text id="11" name="WarningTitle">警告--讯鸟座席端</text>
+<text id="12" name="MiniTip">启通宝用户端</text>
+<text id="13" name="MenuAbout">关于 启通宝...</text>
+<text id="14" name="LoginTitle">登录--启通宝</text>
+<text id="15" name="FrameTitle">启通宝</text>
+</TextResource >
+
+<ImageResource>
+<image id="0" name="ContactUs_Leave" filename="a.bmp" height="100" weight="100"/>
+<image id="1" name="ContactUs_Hover" filename="a.bmp" height="100" weight="100"/>
+<image id="2" name="ContactUs_Click" filename="a.bmp" height="100" weight="100"/>
+<image id="3" name="UpdateBg" filename="a.bmp" height="100" weight="100"/>
+<image id="4" name="LoginBg" filename="a.bmp" height="100" weight="100"/>
+<image id="5" name="LoginExpandBg" filename="a.bmp" height="100" weight="100"/>
+
+<image id="6" name="FrameTitleBg" filename="a.bmp" height="100" weight="100"/>
+
+</ImageResource>
+
+<IconResource>
+<icon id="0" name="Main" filename="onhook.ico"  height="0" weight="0" pix="16" />
+</IconResource>
+
+</Resource>
